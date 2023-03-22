@@ -1,0 +1,169 @@
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500;700;900&display=swap');
+
+:root {
+  --pale-blue: hsl(225, 100%, 94%);
+  --bright-blue: hsl(245, 75%, 52%);
+
+  --very-pale-blue: hsl(225, 100%, 98%);
+  --desaturated-blue: hsl(224, 32%, 55%);
+  --dark-blue: hsl(223, 47%, 23%);
+
+  --active-color: hsl(245, 83%, 68%);
+
+  --fw-normal: 500;
+  --fw-semi: 700;
+  --fw-bold: 900;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Red Hat Display";
+}
+
+body {
+  height: 100vh;
+  width: 100vw;
+  background-image: url(/images/pattern-background-desktop.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  display: grid;
+  place-items: center;
+}
+
+main {
+  --padx: 3rem;
+  --pady: 2.5rem; 
+
+  padding: var(--pady) var(--padx);
+  padding-top: 0 !important;
+
+  width: 27rem;
+  height: 37rem;
+  border-radius: .6rem;
+  max-width: calc(100vw - var(--padx));
+  background-color: var(--pale-blue);
+  display: flex;
+  gap: 2rem;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  box-shadow: 0 10px 3rem rgba(0, 0, 0, .6);
+  overflow: hidden;
+}
+
+.card__image {
+  width: calc(100% + calc(var(--padx) * 2));
+  height: 60%;
+}
+
+.card__title, .card__brief {
+  text-align: center;
+}
+
+.card__title {
+  font-weight: var(--fw-bold);
+  font-size: 1.8rem;
+  color: var(--dark-blue)
+}
+
+.card__brief {
+  font-weight: var(--fw-normal);
+  color: var(--desaturated-blue);
+  max-width: 80%;
+}
+
+.order__wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.order__main {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1ch;
+}
+
+.order__info {
+  display: flex;
+  flex-direction: column;
+  gap: .3rem;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.order__info .order {
+  color: var(--dark-blue);
+  font-size: 1.1rem;
+  font-weight: var(--fw-semi);
+}
+
+.order__info .order__payment {
+  font-weight: var(--fw-normal);
+  color: var(--desaturated-blue)
+}
+
+.order__change {
+  color: var(--bright-blue);
+  cursor: pointer;
+}
+
+.order__change:where(:hover, :focus) {
+  text-decoration: none;
+  color: var(--active-color);
+}
+
+.btn__wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+  justify-content: center;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.btn {
+  width: 100%;
+  padding-top: .8rem;
+  padding-bottom: .8rem;
+  font-size: 1.025rem;
+  border-radius: .7rem;
+  border: none;
+  cursor: pointer;
+  font-weight: var(--fw-semi);
+}
+
+.btn__payment {
+  background-color: var(--bright-blue);
+  color: white;
+}
+
+.btn__payment:where(:hover, :focus) {
+  background-color: var(--active-color);
+}
+
+.btn__cancel {
+  color: var(--desaturated-blue);
+  background-color: var(--pale-blue);
+}
+
+.btn__cancel:where(:hover, :focus) {
+  color: var(--dark-blue);
+}
+
+@media (max-width: 600px) {
+  
+  body {
+    background-image: url(/images/pattern-background-mobile.svg);
+  }
+
+  .card__brief {
+    max-width: 100%;
+  }
+
+}
